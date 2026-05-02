@@ -38,26 +38,49 @@ IS3-Miopia/
 │   ├── models/             # Modelos de datos
 │   │   ├── User.js
 │   │   ├── Role.js
-│   │   └── Event.js
+│   │   ├── Event.js
+│   │   ├── Talk.js
+│   │   ├── EventAttendee.js
+│   │   ├── Feedback.js
+│   │   ├── Survey.js
+│   │   ├── SurveyQuestion.js
+│   │   └── SurveyResponse.js
 │   ├── controllers/        # Controladores
 │   │   ├── auth-controller.js
 │   │   ├── role-controller.js
-│   │   └── event-controller.js
+│   │   ├── event-controller.js
+│   │   ├── accreditation-controller.js
+│   │   ├── certificate-controller.js
+│   │   ├── feedback-controller.js
+│   │   └── report-controller.js
 │   ├── routes/             # Rutas de API
 │   │   ├── auth-routes.js
 │   │   ├── role-routes.js
-│   │   └── event-routes.js
+│   │   ├── event-routes.js
+│   │   ├── accreditation-routes.js
+│   │   ├── certificate-routes.js
+│   │   ├── feedback-routes.js
+│   │   └── report-routes.js
 │   ├── middlewares/        # Middlewares
 │   │   ├── auth.js
 │   │   └── role-auth.js
 │   ├── services/          # Lógica de negocio
 │   │   ├── auth-service.js
-│   │   └── role-service.js
+│   │   ├── role-service.js
+│   │   ├── event-service.js
+│   │   ├── accreditation-service.js
+│   │   ├── certificate-service.js
+│   │   ├── feedback-service.js
+│   │   └── report-service.js
 │   └── utils/              # Utilidades
 │       └── validator.js
 ├── specs/                  # Especificaciones por módulo
 │   ├── spec_m1.md          # Gestión de Roles
-│   └── spec_m2.md          # Gestión de Eventos
+│   ├── spec_m2.md          # Gestión de Eventos
+│   ├── spec_m3.md          # Acreditación
+│   ├── spec_m4.md          # Certificados
+│   ├── spec_m5.md          # Encuestas y Comentarios
+│   └── spec_m6.md          # Informes y Agenda
 └── tests/                  # Tests
     ├── unit/
     └── integration/
@@ -101,6 +124,7 @@ IS3-Miopia/
 - bcrypt: ^5.1.1
 - joi: ^17.11.0
 - dotenv: ^16.3.1
+- pdfkit: ^0.14.0
 
 ### Desarrollo
 - jest: ^29.7.0
@@ -143,6 +167,10 @@ IS3-Miopia/
 
 - **Módulo 1**: Gestión de Roles (organizador/participante/disertante) → [specs/spec_m1.md](specs/spec_m1.md)
 - **Módulo 2**: Gestión de Eventos → [specs/spec_m2.md](specs/spec_m2.md)
+- **Módulo 3**: Acreditación de participantes → [specs/spec_m3.md](specs/spec_m3.md)
+- **Módulo 4**: Generación de Certificados → [specs/spec_m4.md](specs/spec_m4.md)
+- **Módulo 5**: Encuestas y Comentarios Post-Evento → [specs/spec_m5.md](specs/spec_m5.md)
+- **Módulo 6**: Generación de Informes y Agenda → [specs/spec_m6.md](specs/spec_m6.md)
 
 ## Estado
 
