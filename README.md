@@ -5,5 +5,5 @@ Repositorio para la cátedra de Ingeniería de Software III - Actualidad Inform�
 ## Integrantes
 - Amarilla Aldana Abigail Itatí
 - González Diego Agustín
-- Machado Victor Leandro
 - Ibañez Adrian Jose María
+- Machado Victor Leandro
