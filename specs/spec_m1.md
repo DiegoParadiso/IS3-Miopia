@@ -1,6 +1,6 @@
 # Especificación Módulo 1: Gestión de Roles
 
-**Estado:** En proceso
+**Estado:** Finalizado
 
 ## Índice
 1. [Descripción](#descripción)
