@@ -1,6 +1,6 @@
 # Especificación Módulo 5: Encuestas y Comentarios Post-Evento
 
-**Estado:** En progreso
+**Estado:** Finalizado
 
 ## Índice
 1. [Descripción](#descripción)
