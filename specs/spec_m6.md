@@ -1,6 +1,6 @@
 # Especificación Módulo 6: Generación de Informes y Agenda
 
-**Estado:** Finalizado
+**Estado:** En progreso
 
 ## Índice
 1. [Descripción](#descripción)
