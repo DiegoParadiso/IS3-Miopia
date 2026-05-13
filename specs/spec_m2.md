@@ -1,5 +1,7 @@
 # Especificación Módulo 2: Gestión de Eventos
 
+**Estado:** Finalizado
+
 ## Índice
 1. [Descripción](#descripción)
 2. [Arquitectura](#arquitectura)

@@ -1,5 +1,7 @@
 # Especificación Módulo 1: Gestión de Roles
 
+**Estado:** Finalizado
+
 ## Índice
 1. [Descripción](#descripción)
 2. [Arquitectura](#arquitectura)
