@@ -1,5 +1,7 @@
 # Especificación Módulo 6: Generación de Informes y Agenda
 
+**Estado:** En progreso
+
 ## Índice
 1. [Descripción](#descripción)
 2. [Objetivos y Contexto](#objetivos-y-contexto)

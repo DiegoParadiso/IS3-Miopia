@@ -1,5 +1,7 @@
 # Especificación Módulo 5: Encuestas y Comentarios Post-Evento
 
+**Estado:** En progreso
+
 ## Índice
 1. [Descripción](#descripción)
 2. [Objetivos y Contexto](#objetivos-y-contexto)
