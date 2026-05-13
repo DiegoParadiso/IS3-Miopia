@@ -1,5 +1,7 @@
 # Especificación Módulo 4: Certificados
 
+**Estado de Avance:** En progreso
+
 ## Índice
 1. [Descripción](#descripción)
 2. [Arquitectura](#arquitectura)
