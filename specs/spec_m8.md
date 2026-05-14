@@ -1,6 +1,7 @@
 # Especificación Módulo 8: Gestión de Perfil de Usuario
 
-**Estado:** En proceso
+
+**Estado:** Finalizado
 
 ## Índice
 1. [Descripción](#descripción)
