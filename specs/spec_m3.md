@@ -1,6 +1,6 @@
 # Especificación Módulo 3: Acreditación
 
-**Estado de Avance:** En progreso
+**Estado de Avance:** Finalizado
 
 ## Índice
 1. [Descripción](#descripción)

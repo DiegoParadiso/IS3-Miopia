@@ -1,6 +1,6 @@
 # Especificación Módulo 4: Certificados
 
-**Estado de Avance:** En progreso
+**Estado de Avance:** Finalizado
 
 ## Índice
 1. [Descripción](#descripción)
