@@ -1,6 +1,7 @@
 # Especificación Módulo 7: Notificaciones y Recordatorios
 
-**Estado:** En proceso
+
+**Estado:** Finalizado
 
 ## Índice
 1. [Descripción](#descripción)
