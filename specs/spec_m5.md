@@ -239,6 +239,7 @@ El Módulo 5 implementa el sistema de **Encuestas y Comentarios Post-Evento** qu
 - Dado que no asistí al evento, no puedo enviar feedback
 - El campo comentario es opcional
 - El rating es obligatorio
+- **Seguridad (OWASP XSS):** El sistema debe sanitizar y codificar la entrada del campo "comentario", eliminando o neutralizando etiquetas HTML/JS para prevenir inyección de código malicioso.
 
 ---
 
@@ -266,6 +267,7 @@ El Módulo 5 implementa el sistema de **Encuestas y Comentarios Post-Evento** qu
 - Debo responder todas las preguntas marcadas como requeridas
 - Solo puedo enviar una respuesta por encuesta
 - Dado que la encuesta no está activa, no puedo responderla
+- **Seguridad (OWASP XSS):** Las respuestas de texto libre deben ser estrictamente validadas y sanitizadas antes de su almacenamiento.
 
 ---
 
@@ -288,6 +290,7 @@ El Módulo 5 implementa el sistema de **Encuestas y Comentarios Post-Evento** qu
 ### Requisitos Funcionales
 - **RF501**: El sistema debe permitir enviar calificaciones de 1 a 5 estrellas
 - **RF502**: El sistema debe permitir agregar un comentario textual opcional (max 1000 caracteres)
+- **RF502.1 (Seguridad)**: Todo campo de texto libre (comentarios y respuestas de encuesta) debe aplicar una política de Content Security y sanitización contra Cross-Site Scripting (XSS).
 - **RF503**: Solo usuarios que hicieron check-in al evento pueden enviar feedback
 - **RF504**: Un usuario solo puede enviar un feedback por evento
 - **RF505**: Los organizadores pueden crear encuestas con preguntas de distintos tipos

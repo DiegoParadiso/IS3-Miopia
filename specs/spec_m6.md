@@ -238,6 +238,7 @@ El Módulo 6 implementa la **Generación de Informes y Agenda** del sistema, per
 - Incluye métricas de satisfacción (si hay feedback)
 - Incluye resumen de encuestas (si existen)
 - Incluye cantidad de charlas y disertantes
+- **Seguridad (OWASP XSS):** El texto libre incluido en el informe (ej. comentarios de feedback) debe ser renderizado escapando caracteres especiales para evitar inyecciones, incluso en formato PDF o visualizaciones previas.
 
 ---
 
@@ -263,6 +264,7 @@ El Módulo 6 implementa la **Generación de Informes y Agenda** del sistema, per
 - **RF605**: Los informes de asistencia y estadísticas solo para el organizador
 - **RF606**: Los PDFs se generan on-demand, no se almacenan
 - **RF607**: Los informes deben incluir datos consolidados de todos los módulos relevantes
+- **RF608 (Seguridad)**: Toda generación de informes que incluya contenido provisto por usuarios (texto libre) debe contar con filtrado y *output encoding* para mitigar Cross-Site Scripting (XSS).
 
 ---
 
