@@ -402,6 +402,7 @@ interface RoleResponseDTO {
 4. **RN004**: Los permisos deben ser validados contra un catálogo de permisos válidos
 5. **RN005**: Al crear un usuario, se debe asignar un rol válido
 6. **RN006**: Un usuario solo puede tener un rol a la vez
+7. **RN007** — Seguridad (OWASP API2): El sistema debe validar la firma, expiración e integridad del JWT en cada request y verificar que el estado y los permisos del usuario almacenados en base de datos no hayan sido modificados desde la emisión del token. Si el token es inválido, expiró, o los permisos del usuario fueron cambiados (ej: cambio de rol), la operación debe rechazarse con HTTP 401 y el token debe considerarse no válido para futuros requests.
 
 ---
 
@@ -425,33 +426,38 @@ interface RoleResponseDTO {
 
 #### CU2: Asignar Rol a Usuario
 **Actor**: Organizador  
-**Precondición**: Usuario autenticado con rol organizador  
+**Precondición**: Usuario autenticado con rol organizador y JWT válido vigente  
 **Flujo**:
 1. Organizador envía userId y roleId
-2. Sistema verifica que usuario exista
-3. Sistema verifica que rol exista
-4. Sistema asigna rol al usuario
-5. Sistema retorna usuario con rol actualizado
+2. Sistema valida firma, expiración e integridad del JWT y verifica que los permisos del organizador en base de datos sigan vigentes
+3. Sistema verifica que usuario exista
+4. Sistema verifica que rol exista
+5. Sistema asigna rol al usuario
+6. Sistema invalida el JWT del usuario cuyo rol fue modificado para forzar un nuevo login
+7. Sistema retorna usuario con rol actualizado
 
 **Excepciones**:
 - E1: Usuario no encontrado → Error 404
 - E2: Rol no encontrado → Error 404
+- E3: JWT inválido, expirado, o permisos del organizador modificados desde la emisión del token → Error 401
 
 ---
 
 #### CU3: Eliminar Rol
 **Actor**: Organizador  
-**Precondición**: Usuario autenticado con rol organizador  
+**Precondición**: Usuario autenticado con rol organizador y JWT válido vigente  
 **Flujo**:
 1. Organizador solicita eliminar rol por ID
-2. Sistema verifica que rol exista
-3. Sistema verifica que no tenga usuarios asignados
-4. Sistema elimina rol
-5. Sistema confirma eliminación
+2. Sistema valida firma, expiración e integridad del JWT y verifica que los permisos del organizador en base de datos sigan vigentes
+3. Sistema verifica que rol exista
+4. Sistema verifica que no tenga usuarios asignados
+5. Sistema elimina rol
+6. Sistema confirma eliminación
 
 **Excepciones**:
 - E1: Rol no encontrado → Error 404
 - E2: Rol en uso → Error 400
+- E3: JWT inválido, expirado, o permisos del organizador modificados desde la emisión del token → Error 401
 
 ---
 
