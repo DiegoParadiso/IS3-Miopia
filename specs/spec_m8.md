@@ -261,14 +261,16 @@ El Módulo 8 implementa la **Gestión de Perfil de Usuario**, que permite a cada
 
 ### HU805: Eliminar mi cuenta
 **Como** usuario autenticado  
-**Quiero** poder eliminar mi cuenta  
-**Para** ejercer mi derecho a retirar mis datos del sistema  
+**Quiero** poder eliminar mi cuenta con validación de mi estado actual en el sistema  
+**Para** ejercer mi derecho a retirar mis datos del sistema y garantizar que un token reutilizado tras la eliminación no pueda operar sobre una cuenta ya inexistente  
 
 **Criterios de Aceptación:**
 - Debo confirmar con mi contraseña antes de que la cuenta sea eliminada
 - Si soy organizador de eventos futuros activos, no puedo eliminar la cuenta sin antes cancelar esos eventos
 - Al eliminarse la cuenta, se eliminan mis datos personales, feedback, notificaciones y registros a eventos
 - Los eventos pasados que organicé permanecen en el sistema (integridad histórica)
+- Seguridad (OWASP API2): El sistema debe validar la firma, expiración e integridad del JWT y verificar que el usuario autenticado aún exista y no haya sido eliminado previamente antes de procesar la solicitud de eliminación. Si el JWT es inválido, expiró, o el usuario ya no existe en base de datos, la operación debe rechazarse con HTTP 401.
+- Seguridad (OWASP API2): Una vez eliminada la cuenta exitosamente, cualquier request posterior con el mismo JWT debe ser rechazado con HTTP 401, ya que el usuario asociado al token ya no existe en el sistema.
 
 ---
 
@@ -287,6 +289,7 @@ El Módulo 8 implementa la **Gestión de Perfil de Usuario**, que permite a cada
 8. **RN808**: Un organizador no puede eliminar su cuenta si tiene eventos futuros en estado `published`
 9. **RN809**: La eliminación de cuenta se realiza dentro de una transacción; si algún paso falla, se revierte todo
 10. **RN810**: Los eventos y charlas históricas no se eliminan al borrar una cuenta (integridad referencial; el campo `organizerId`/`speakerId` puede quedar como referencia huérfana o setearse a null según política del sistema)
+11. **RN811** — Seguridad (OWASP API2): El sistema debe verificar en cada request de perfil que el usuario autenticado mediante JWT aún exista en base de datos y que su cuenta no haya sido eliminada. Si el usuario ya no existe, el request debe rechazarse con HTTP 401 independientemente de la validez del JWT, impidiendo que un token emitido antes de la eliminación pueda seguir operando sobre recursos del perfil.
 
 ---
 
